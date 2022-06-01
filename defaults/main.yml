@@ -6,8 +6,11 @@ benchmark_version: '1.7'
 # The audit variable found at the base
 benchmark: RHEL8-STIG
 
+# Whether to skip the reboot
+rhel8cis_skip_reboot: false
+
 # Whether to skip the OS check for supported OS's
-skip_os_check: false
+skip_os_check: true
 
 rhel8stig_cat1_patch: true
 rhel8stig_cat2_patch: true
@@ -48,10 +51,10 @@ container_vars_file: is_container.yml
 
 # rhel8cis/stig is left off the front of this var for consistency in testing pipeline
 # system_is_ec2 toggle will disable tasks that fail on Amazon EC2 instances. Set true to skip and false to run tasks
-system_is_ec2: false
+system_is_ec2: true
 
 # Whether to skip the reboot
-rhel8stig_skip_reboot: true
+rhel8stig_skip_reboot: false
 
 # Defined will change if control requires
 change_requires_reboot: false

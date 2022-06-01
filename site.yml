@@ -1,5 +1,5 @@
 ---
-- hosts: all  # noqa: name[play]
+- hosts: '{{ inventory_name }}'
   become: true
 
   roles:
