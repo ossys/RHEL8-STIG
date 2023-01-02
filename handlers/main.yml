@@ -159,4 +159,4 @@
 
 - name: change_requires_reboot
   set_fact:
-      change_requires_reboot: true
+      change_requires_reboot: false

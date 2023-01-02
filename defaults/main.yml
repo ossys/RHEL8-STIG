@@ -7,7 +7,7 @@ benchmark_version: '1.7'
 benchmark: RHEL8-STIG
 
 # Whether to skip the reboot
-rhel8cis_skip_reboot: false
+rhel8cis_skip_reboot: true
 
 # Whether to skip the OS check for supported OS's
 skip_os_check: true
@@ -54,7 +54,7 @@ container_vars_file: is_container.yml
 system_is_ec2: true
 
 # Whether to skip the reboot
-rhel8stig_skip_reboot: false
+rhel8stig_skip_reboot: true
 
 # Defined will change if control requires
 change_requires_reboot: false

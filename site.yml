@@ -1,5 +1,5 @@
 ---
-- hosts: '{{ inventory_name }}'
+- hosts: default
   become: true
 
   roles:
