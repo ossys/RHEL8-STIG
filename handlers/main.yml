@@ -17,7 +17,9 @@
 
 - name: sysctl system
   command: sysctl --system
-  when: "'procps-ng' in ansible_facts.packages"
+  when:
+    - "'procps-ng' in ansible_facts.packages"
+    - not system_is_container
 
 - name: restart sshd
   service:
