@@ -2210,6 +2210,7 @@
   when:
       - rhel_08_010672
       - ansible_service_mgr == 'systemd'
+      - not system_is_container
   tags:
       - RHEL-08-010672
       - CAT2
@@ -6537,6 +6538,7 @@
   when:
       - ansible_service_mgr == 'systemd'
       - rhel_08_040180
+      - not system_is_container
   tags:
       - RHEL-08-040180
       - CAT2
