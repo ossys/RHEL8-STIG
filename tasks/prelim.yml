@@ -256,11 +256,11 @@
         when:
             - "'openssh-server' not in ansible_facts.packages"
 
-      - name: PRELIM | Start SSH
-        service:
-            name: sshd
-            state: "{{ rhel8stig_service_started }}"
-            enabled: true
+      #- name: PRELIM | Start SSH
+      #  service:
+      #      name: sshd
+      #      state: "{{ rhel8stig_service_started }}"
+      #      enabled: true
 
       - name: PRELIM | check if ssh host key exists
         stat:

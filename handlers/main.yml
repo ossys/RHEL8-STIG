@@ -28,6 +28,7 @@
   when:
       - not rhel8stig_system_is_chroot
       - "'openssh-server' in ansible_facts.packages"
+      - not system_is_container
 
 - name: restart sssd
   service:
@@ -35,6 +36,7 @@
       state: restarted
   when:
       - "'sssd' in ansible_facts.packages"
+      - not system_is_container
 
 - name: restart snmpd
   service:
@@ -42,11 +44,14 @@
       state: restarted
   when:
       - not rhel8stig_system_is_chroot
+      - not system_is_container
 
 - name: restart rsyslog
   service:
       name: rsyslog
       state: restarted
+  when:
+      - not system_is_container
 
 - name: generate fapolicyd rules
   command: fagenrules --load
@@ -56,6 +61,8 @@
   service:
       name: fapolicyd
       state: restarted
+  when:
+      - not system_is_container
 
 - name: confirm grub2 user cfg
   stat:

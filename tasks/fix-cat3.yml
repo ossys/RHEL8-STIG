@@ -19,7 +19,7 @@
       path: /etc/sysconfig/sshd
       regexp: '^(#)?SSH_USE_STRONG_RNG='
       line: SSH_USE_STRONG_RNG=32
-  notify: restart sshd
+  #notify: restart sshd
   when:
       - rhel_08_010292
       - rhel8stig_ssh_required
@@ -284,6 +284,7 @@
   notify: restart auditd
   when:
       - rhel_08_030063
+      - not system_is_container
   tags:
       - RHEL-08-030063
       - CAT3
@@ -323,6 +324,7 @@
         when: '"audit=" in rhel8stig_030601_grub_cmdline_linux.stdout'
   when:
       - rhel_08_030601
+      - not system_is_container
   tags:
       - RHEL-08-030601
       - CAT3
@@ -362,6 +364,7 @@
         when: '"audit_backlog_limit=" in rhel8stig_030602_grub_cmdline_linux.stdout'
   when:
       - rhel_08_030602
+      - not system_is_container
   tags:
       - RHEL-08-030602
       - CAT3
@@ -457,6 +460,7 @@
         when: '"pti=on" in rhel8stig_040004_grub_cmdline_linux.stdout'
   when:
       - rhel_08_040004
+      - not system_is_container
   tags:
       - RHEL-08-040004
       - CAT3

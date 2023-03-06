@@ -304,6 +304,7 @@
   when:
       - rhel_08_010141 or
         rhel_08_010149
+      - not system_is_container
   tags:
       - RHEL-08-010141
       - RHEL-08-010149
@@ -1398,6 +1399,7 @@
         when: '"page_poison=" in rhel8stig_010421_grub_cmdline_linux.stdout'
   when:
       - rhel_08_010421
+      - not system_is_container
   tags:
       - RHEL-08-010421
       - CAT2
@@ -1438,6 +1440,7 @@
         when: '"vsyscall=" in rhel8stig_010422_grub_cmdline_linux.stdout'
   when:
       - rhel_08_010422
+      - not system_is_container
   tags:
       - RHEL-08-010422
       - CAT2
@@ -1478,6 +1481,7 @@
         when: '"slub_debug=" in rhel8stig_010423_grub_cmdline_linux.stdout'
   when:
       - rhel_08_010423
+      - not system_is_container
   tags:
       - RHEL-08-010423
       - CAT2
@@ -1745,6 +1749,7 @@
       enabled: true
   when:
       - rhel_08_010561
+      - not system_is_container
   tags:
       - RHEL-08-010561
       - CAT2
@@ -2160,6 +2165,7 @@
       - rhel_08_010670
       - "'kexec-tools' in ansible_facts.packages"
       - not rhel8stig_kdump_needed
+      - not system_is_container
   tags:
       - RHEL-08-010670
       - CAT2
@@ -4496,6 +4502,7 @@
         when: rhel8stig_030080_audit_log_file.stdout | length > 0
   when:
       - rhel_08_030080
+      - not system_is_container
   tags:
       - RHEL-08-030080
       - CAT2
@@ -4514,6 +4521,7 @@
       line: "log_group = root"
   when:
       - rhel_08_030090
+      - not system_is_container
   tags:
       - RHEL-08-030090
       - CAT2
@@ -4543,6 +4551,7 @@
             - skip_ansible_lint
   when:
       - rhel_08_030100
+      - not system_is_container
   tags:
       - RHEL-08-030100
       - CAT2
@@ -4574,6 +4583,7 @@
             - skip_ansible_lint
   when:
       - rhel_08_030110
+      - not system_is_container
   tags:
       - skip_ansible_lint
       - RHEL-08-030110
@@ -4602,6 +4612,7 @@
         when: rhel_08_030120_audit_log_dir.stdout | length > 0
   when:
       - rhel_08_030120
+      - not system_is_container
   tags:
       - RHEL-08-030120
       - CAT2
@@ -4620,6 +4631,7 @@
       line: "-e 2"
   when:
       - rhel_08_030121
+      - not system_is_container
   tags:
       - RHEL-08-030121
       - CAT2
@@ -4636,6 +4648,7 @@
       line: "--loginuid-immutable"
   when:
       - rhel_08_030122
+      - not system_is_container
   tags:
       - RHEL-08-030122
       - CAT2
@@ -4653,6 +4666,7 @@
   notify: restart auditd
   when:
       - rhel_08_030130
+      - not system_is_container
   tags:
       - RHEL-08-030130
       - CAT2
@@ -4670,6 +4684,7 @@
   notify: restart auditd
   when:
       - rhel_08_030140
+      - not system_is_container
   tags:
       - RHEL-08-030140
       - CAT2
@@ -4687,6 +4702,7 @@
   notify: restart auditd
   when:
       - rhel_08_030150
+      - not system_is_container
   tags:
       - RHEL-08-030150
       - CAT2
@@ -4704,6 +4720,7 @@
   notify: restart auditd
   when:
       - rhel_08_030160
+      - not system_is_container
   tags:
       - RHEL-08-030160
       - CAT2
@@ -4721,6 +4738,7 @@
   notify: restart auditd
   when:
       - rhel_08_030170
+      - not system_is_container
   tags:
       - RHEL-08-030170
       - CAT2
@@ -4738,6 +4756,7 @@
   notify: restart auditd
   when:
       - rhel_08_030171
+      - not system_is_container
   tags:
       - RHEL-08-030171
       - CAT2
@@ -4755,6 +4774,7 @@
   notify: restart auditd
   when:
       - rhel_08_030172
+      - not system_is_container
   tags:
       - RHEL-08-030172
       - CAT2
@@ -4778,6 +4798,7 @@
             state: started
   when:
       - rhel_08_030180
+      - not system_is_container
   tags:
       - rhel_08_030180
       - CAT2
@@ -4795,6 +4816,7 @@
       enabled: true
   when:
       - rhel_08_030181
+      - not system_is_container
   tags:
       - RHEL-08-030181
       - CAT2
@@ -4811,6 +4833,7 @@
   notify: update auditd
   when:
       - rhel_08_030190
+      - not system_is_container
   tags:
       - RHEL-08-030190
       - CAT2
@@ -4827,6 +4850,7 @@
   notify: update auditd
   when:
       - rhel_08_030200
+      - not system_is_container
   tags:
       - RHEL-08-030200
       - CAT2
@@ -4843,6 +4867,7 @@
   notify: update auditd
   when:
       - rhel_08_030250
+      - not system_is_container
   tags:
       - RHEL-08-030250
       - CAT2
@@ -4859,6 +4884,7 @@
   notify: update auditd
   when:
       - rhel_08_030260
+      - not system_is_container
   tags:
       - RHEL-08-030260
       - CAT2
@@ -4875,6 +4901,7 @@
   notify: update auditd
   when:
       - rhel_08_030280
+      - not system_is_container
   tags:
       - RHEL-08-030280
       - CAT2
@@ -4891,6 +4918,7 @@
   notify: update auditd
   when:
       - rhel_08_030290
+      - not system_is_container
   tags:
       - RHEL-08-030290
       - CAT2
@@ -4907,6 +4935,7 @@
   notify: update auditd
   when:
       - rhel_08_030300
+      - not system_is_container
   tags:
       - RHEL-08-030300
       - CAT2
@@ -4923,6 +4952,7 @@
   notify: update auditd
   when:
       - rhel_08_030301
+      - not system_is_container
   tags:
       - RHEL-08-030301
       - CAT2
@@ -4939,6 +4969,7 @@
   notify: update auditd
   when:
       - rhel_08_030302
+      - not system_is_container
   tags:
       - RHEL-08-030302
       - CAT2
@@ -4955,6 +4986,7 @@
   notify: update auditd
   when:
       - rhel_08_030310
+      - not system_is_container
   tags:
       - RHEL-08-030310
       - CAT2
@@ -4971,6 +5003,7 @@
   notify: update auditd
   when:
       - rhel_08_030311
+      - not system_is_container
   tags:
       - RHEL-08-030311
       - CAT2
@@ -4987,6 +5020,7 @@
   notify: update auditd
   when:
       - rhel_08_030312
+      - not system_is_container
   tags:
       - RHEL-08-030312
       - CAT2
@@ -5003,6 +5037,7 @@
   notify: update auditd
   when:
       - rhel_08_030313
+      - not system_is_container
   tags:
       - RHEL-08-030313
       - CAT2
@@ -5019,6 +5054,7 @@
   notify: update auditd
   when:
       - rhel_08_030314
+      - not system_is_container
   tags:
       - RHEL-08-030314
       - CAT2
@@ -5035,6 +5071,7 @@
   notify: update auditd
   when:
       - rhel_08_030315
+      - not system_is_container
   tags:
       - RHEL-08-030315
       - CAT2
@@ -5051,6 +5088,7 @@
   notify: update auditd
   when:
       - rhel_08_030316
+      - not system_is_container
   tags:
       - RHEL-08-030316
       - CAT2
@@ -5067,6 +5105,7 @@
   notify: update auditd
   when:
       - rhel_08_030317
+      - not system_is_container
   tags:
       - RHEL-08-030317
       - CAT2
@@ -5083,6 +5122,7 @@
   notify: update auditd
   when:
       - rhel_08_030320
+      - not system_is_container
   tags:
       - RHEL-08-030320
       - CAT2
@@ -5099,6 +5139,7 @@
   notify: update auditd
   when:
       - rhel_08_030330
+      - not system_is_container
   tags:
       - RHEL-08-030330
       - CAT2
@@ -5115,6 +5156,7 @@
   notify: update auditd
   when:
       - rhel_08_030340
+      - not system_is_container
   tags:
       - RHEL-08-030340
       - CAT2
@@ -5131,6 +5173,7 @@
   notify: update auditd
   when:
       - rhel_08_030350
+      - not system_is_container
   tags:
       - RHEL-08-030350
       - CAT2
@@ -5147,6 +5190,7 @@
   notify: update auditd
   when:
       - rhel_08_030360
+      - not system_is_container
   tags:
       - RHEL-08-030360
       - CAT2
@@ -5163,6 +5207,7 @@
   notify: update auditd
   when:
       - rhel_08_030361
+      - not system_is_container
   tags:
       - RHEL-08-030361
       - CAT2
@@ -5179,6 +5224,7 @@
   notify: update auditd
   when:
       - rhel_08_030370
+      - not system_is_container
   tags:
       - RHEL-08-030370
       - CAT2
@@ -5195,6 +5241,7 @@
   notify: update auditd
   when:
       - rhel_08_030390
+      - not system_is_container
   tags:
       - RHEL-08-030390
       - CAT2
@@ -5211,6 +5258,7 @@
   notify: update auditd
   when:
       - rhel_08_030400
+      - not system_is_container
   tags:
       - RHEL-08-030400
       - CAT2
@@ -5227,6 +5275,7 @@
   notify: update auditd
   when:
       - rhel_08_030410
+      - not system_is_container
   tags:
       - RHEL-08-030410
       - CAT2
@@ -5243,6 +5292,7 @@
   notify: update auditd
   when:
       - rhel_08_030420
+      - not system_is_container
   tags:
       - RHEL-08-030420
       - CAT2
@@ -5259,6 +5309,7 @@
   notify: update auditd
   when:
       - rhel_08_030480
+      - not system_is_container
   tags:
       - RHEL-08-030480
       - CAT2
@@ -5275,6 +5326,7 @@
   notify: update auditd
   when:
       - rhel_08_030490
+      - not system_is_container
   tags:
       - RHEL-08-030490
       - CAT2
@@ -5291,6 +5343,7 @@
   notify: update auditd
   when:
       - rhel_08_030550
+      - not system_is_container
   tags:
       - RHEL-08-030550
       - CAT2
@@ -5307,6 +5360,7 @@
   notify: update auditd
   when:
       - rhel_08_030560
+      - not system_is_container
   tags:
       - RHEL-08-030560
       - CAT2
@@ -5323,6 +5377,7 @@
   notify: update auditd
   when:
       - rhel_08_030570
+      - not system_is_container
   tags:
       - RHEL-08-030570
       - CAT2
@@ -5339,6 +5394,7 @@
   notify: update auditd
   when:
       - rhel_08_030580
+      - not system_is_container
   tags:
       - RHEL-08-030580
       - CAT2
@@ -5355,6 +5411,7 @@
   notify: update auditd
   when:
       - rhel_08_030590
+      - not system_is_container
   tags:
       - RHEL-08-030590
       - CAT2
@@ -5371,6 +5428,7 @@
   notify: update auditd
   when:
       - rhel_08_030600
+      - not system_is_container
   tags:
       - RHEL-08-030600
       - CAT2
@@ -5440,6 +5498,7 @@
       - /sbin/augenrules
   when:
       - rhel_08_030630
+      - not system_is_container
   tags:
       - RHEL-08-030630
       - CAT2
@@ -5465,6 +5524,7 @@
       - /sbin/augenrules
   when:
       - rhel_08_030640
+      - not system_is_container
   tags:
       - RHEL-08-030640
       - CAT2
@@ -5493,6 +5553,7 @@
       - /usr/sbin/augenrules p+i+n+u+g+s+b+acl+xattrs+sha512
   when:
       - rhel_08_030650
+      - not system_is_container
   tags:
       - RHEL-08-030650
       - CAT2
@@ -5524,6 +5585,7 @@
                 - "Disk Space: {{ rhel_08_030660_audit_log_partition.stdout }}"
   when:
       - rhel_08_030660
+      - not system_is_container
   tags:
       - RHEL-08-030660
       - CAT2
@@ -5540,6 +5602,7 @@
   when:
       - rhel_08_030670
       - "'rsyslog' not in ansible_facts.packages"
+      - not system_is_container
   tags:
       - RHEL-08-030670
       - CAT2
@@ -5556,6 +5619,7 @@
   when:
       - rhel_08_030680
       - "'rsyslog-gnutls' not in ansible_facts.packages"
+      - not system_is_container
   tags:
       - RHEL-08-030680
       - CAT2
@@ -5573,6 +5637,7 @@
       line: "*.* @@{{ rhel8stig_remotelog_server.server }}:{{ rhel8stig_remotelog_server.port }}"
   when:
       - rhel_08_030690
+      - not system_is_container
   tags:
       - RHEL-08-030690
       - CAT2
@@ -5591,6 +5656,7 @@
   notify: restart auditd
   when:
       - rhel_08_030700
+      - not system_is_container
   tags:
       - RHEL-08-030700
       - CAT2
@@ -5614,6 +5680,7 @@
       - { regexp: '^\$ActionSendStreamDriverMode', line: '$ActionSendStreamDriverMode 1' }
   when:
       - rhel_08_030710
+      - not system_is_container
   tags:
       - RHEL-08-030710
       - CAT2
@@ -5632,6 +5699,7 @@
   notify: restart auditd
   when:
       - rhel_08_030720
+      - not system_is_container
   tags:
       - rhel_08_030720
       - CAT2
@@ -5649,6 +5717,7 @@
       line: 'space_left = 25%'
   when:
       - rhel_08_030730
+      - not system_is_container
   tags:
       - RHEL-08-030730
       - CAT2
@@ -5665,6 +5734,7 @@
       line: 'space_left_action = EMAIL'
   when:
       - rhel_08_030731
+      - not system_is_container
   tags:
       - RHEL-08-030731
       - CAT2
@@ -5683,6 +5753,7 @@
   when:
       - rhel_08_030740
       - "'chrony' in ansible_facts.packages"
+      - not system_is_container
   tags:
       - RHEL-08-030740
       - CAT2
@@ -5866,6 +5937,7 @@
         when: rhel_08_040070_autofs_status.stdout == "loaded"
   when:
       - rhel_08_040070
+      - not system_is_container
   tags:
       - RHEL-08-040070
       - CAT2
@@ -5921,6 +5993,7 @@
   when:
       - rhel_08_040100
       - rhel8stig_firewall_service != "not_required"
+      - not system_is_container
   tags:
       - RHEL-08-040100
       - CAT2
@@ -5947,6 +6020,7 @@
   when:
       - rhel_08_040101
       - rhel8stig_firewall_service == "firewalld"
+      - not system_is_container
   tags:
       - RHEL-08-040101
       - CAT2
@@ -6011,6 +6085,7 @@
   when:
       - rhel_08_040090
       - rhel8stig_firewall_service != "not_required"
+      - not system_is_container
   tags:
       - RHEL-08-040090
       - CAT2
@@ -6123,6 +6198,7 @@
       - rhel_08_040120 or
         rhel_08_040121 or
         rhel_08_040122
+      - not system_is_container
   tags:
       - CAT2
       - RHEL-08-040120
@@ -6330,6 +6406,7 @@
   when:
       - rhel_08_040135
       - "'fapolicyd' not in ansible_facts.packages"
+      - not system_is_container
   tags:
       - RHEL-08-040135
       - CAT2
@@ -6346,6 +6423,7 @@
       enabled: true
   when:
       - rhel_08_040136
+      - not system_is_container
   tags:
       - RHEL-08-040136
       - CAT2
@@ -6398,6 +6476,7 @@
             - restart fapolicyd
   when:
       - rhel_08_040137
+      - not system_is_container
   tags:
       - RHEL-08-040137
       - CAT2
@@ -6498,6 +6577,7 @@
       - rhel_08_040159 or
         rhel_08_040160
       - rhel8stig_ssh_required
+      - not system_is_container
   tags:
       - RHEL-08-040159
       - RHEL-08-040160
